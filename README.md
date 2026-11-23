@@ -16,7 +16,14 @@ oxiguitar-audio-cpal = { git = "https://github.com/mateusrdp/oxiguitar-audio-cpa
 cpal = { version = "0.18.2", default-features = false }
 ```
 
-Use the same `oxiguitar-plugin` tag as this repository's `Cargo.toml`: the service it gives you must be the SDK's own type. The manual's [How to use it](https://mateusrdp.github.io/oxiguitar-audio-cpal/use-cases.html) page has the code.
+Requirements for the repository that depends on it (the manual's [How to use it](https://mateusrdp.github.io/oxiguitar-audio-cpal/use-cases.html) page has the code and the reasons):
+
+- The same `oxiguitar-plugin` tag as this repository's `Cargo.toml`, or the build sees two `Host` types.
+- The same cpal version (0.18.2), `default-features = false`, and only your own host's feature.
+- `deny.toml`: `allow-git` must list `https://github.com/mateusrdp/oxiguitar-audio-cpal` as well as `https://github.com/mateusrdp/oxiguitar`.
+- After changing the tag: `cargo update -p oxiguitar-audio-cpal -p cpal`, and commit `Cargo.lock`.
+- Dependabot ignores `oxiguitar-*`; the tags move together, by hand, this repository first.
+- This repository's release is its tag: no GitHub Release page, nothing on crates.io.
 
 ## Build and test
 
