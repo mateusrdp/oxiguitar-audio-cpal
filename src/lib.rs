@@ -26,16 +26,21 @@
 //!   move the tag here and in the four plugins together.
 //! - cpal is used as released, with `default-features = false`; each plugin
 //!   turns on its own host's feature (`pipewire`) on its own `cpal`
-//!   dependency and cargo unifies the two. On Linux cpal always builds its
-//!   ALSA host too (Mateus, 25 Oct 2026: accepted).
+//!   dependency and cargo unifies the two. Upstream (cpal 0.18): on Linux
+//!   cpal always builds its ALSA host too (Mateus, 25 Oct 2026: accepted).
 //! - The device's own delay (`OutputCallbackInfo::timestamp`, playback
 //!   minus callback) is what the core uses to show the cursor where the
-//!   sound is heard: a host that reports no delay gives 0, and the cursor
-//!   then runs a buffer early. Worth checking when cpal changes how a host
-//!   fills the timestamp.
-//! - Integer devices: cpal 0.18 offers no conversion of its own on the
-//!   output side, so f32 samples are clamped and scaled here (`to_i16`,
-//!   `to_i32`). If a later cpal converts for us, these and `CONVERT` can go.
+//!   sound is heard. Upstream (cpal 0.18): a host that reports no delay
+//!   gives 0, and the cursor then runs a buffer early. On update: check how
+//!   each host fills the timestamp.
+//! - Integer devices. Upstream (cpal 0.18): cpal offers no conversion of
+//!   its own on the output side, so f32 samples are clamped and scaled here
+//!   (`to_i16`, `to_i32`). On update: if cpal converts for us, these and
+//!   `CONVERT` can go.
+//!
+//! Notes marked `Upstream (CRATE VERSION)` follow OxiGuitar's convention
+//! (its CONTRIBUTING.md, "Comments in the code"): what a library does or
+//! lacks, what we do about it, and what to check when it moves.
 //! - Formats other than f32, i16 and i32 (u8, i8, i64, f64, u16, ...) are
 //!   refused: no device we have seen offers only those.
 
