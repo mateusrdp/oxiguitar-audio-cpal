@@ -4,6 +4,8 @@ All notable changes to this repository are documented here. The format follows [
 
 ## [Unreleased]
 
+## [0.1.1] - 2026-11-23
+
 ### Changed
 
 - Documented what a plugin's repository must do to depend on this layer: the same SDK tag and cpal version, `allow-git` in `deny.toml`, refreshing `Cargo.lock`, Dependabot, and the order of an SDK bump.
