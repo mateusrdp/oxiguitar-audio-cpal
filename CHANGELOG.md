@@ -4,6 +4,8 @@ All notable changes to this repository are documented here. The format follows [
 
 ## [Unreleased]
 
+## [0.1.0] - 2026-11-23
+
 ### Added
 
 - The shared audio output layer, moved from OxiGuitar's repository (`crates/oxiguitar-audio-cpal`, unchanged since OxiGuitar 0.11.0), on cpal 0.18.2 and the SDK's `v0.11.0` tag.
