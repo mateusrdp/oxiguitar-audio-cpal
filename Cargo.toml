@@ -17,7 +17,7 @@ publish = false
 # The SDK, at the same tag as the four plugins that use this crate: its
 # `Service` and `Host` must be their types. Move it and the plugins' tags
 # together.
-oxiguitar-plugin = { git = "https://github.com/mateusrdp/oxiguitar", tag = "v0.23.0" }
+oxiguitar-plugin = { git = "https://github.com/mateusrdp/oxiguitar", rev = "d1e8347d1d2a69d8ac3caee6a07670d64cdef342" }
 # Each plugin adds the features of its own host (the PipeWire plugin's
 # `pipewire`) on its own cpal dependency; on Linux cpal always builds its
 # ALSA host too (Mateus, 25 Oct 2026: accepted).

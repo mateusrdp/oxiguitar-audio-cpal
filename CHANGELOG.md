@@ -4,6 +4,10 @@ All notable changes to this repository are documented here. The format follows [
 
 ## [Unreleased]
 
+### Changed
+
+- **The SDK is at plugin interface 2.0** (mateusrdp/oxiguitar#346), by the commit of mateusrdp/oxiguitar#350 until the release that tags it; the output plugins that use this crate move with it, and need OxiGuitar 0.24 or later.
+
 ## [0.2.1] - 2026-11-25
 
 ### Changed
