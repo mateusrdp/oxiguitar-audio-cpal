@@ -4,6 +4,10 @@ All notable changes to this repository are documented here. The format follows [
 
 ## [Unreleased]
 
+### Changed
+
+- The SDK at the tag `v0.23.0` instead of the commit before it (the same SDK), so the four audio-device plugins can name it by tag too.
+
 ## [0.2.0] - 2026-11-25
 
 ### Changed
