@@ -4,6 +4,8 @@ All notable changes to this repository are documented here. The format follows [
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-11-25
+
 ### Changed
 
 - **The SDK at mateusrdp/oxiguitar#348's commit** (plugin files are tar archives, mateusrdp/oxiguitar#347), in step with the four audio-device plugins, which move with it; `scripts/test-all.py` 1.1.0, as in every repository.
