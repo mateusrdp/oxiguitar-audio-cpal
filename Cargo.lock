@@ -3,6 +3,12 @@
 version = 4
 
 [[package]]
+name = "adler2"
+version = "2.0.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "320119579fcad9c21884f5c4861d16174d0e06250625266f50fe6898340abefa"
+
+[[package]]
 name = "alsa"
 version = "0.11.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -300,6 +306,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "cf8baf1c55e62ffcace7a9f06f4bd9cd3f0c4beb022d3b367256b91b87513d98"
 
 [[package]]
+name = "miniz_oxide"
+version = "0.8.9"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "1fa76a2c86f704bdb222d66965fb3d63269ce38518b83cb0575fca855ebb6316"
+dependencies = [
+ "adler2",
+]
+
+[[package]]
 name = "ndk"
 version = "0.9.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -470,8 +485,8 @@ dependencies = [
 
 [[package]]
 name = "oxiguitar-plugin"
-version = "1.4.0"
-source = "git+https://github.com/mateusrdp/oxiguitar?tag=v0.11.0#292dc2810445423343fb33f5f029027fd60e6ed0"
+version = "1.16.0"
+source = "git+https://github.com/mateusrdp/oxiguitar?rev=b88431f763df71c66fe4f54f8ee4a5d0663dbec1#b88431f763df71c66fe4f54f8ee4a5d0663dbec1"
 dependencies = [
  "oxiguitar-plugin-api",
  "serde_json",
@@ -479,9 +494,10 @@ dependencies = [
 
 [[package]]
 name = "oxiguitar-plugin-api"
-version = "1.4.0"
-source = "git+https://github.com/mateusrdp/oxiguitar?tag=v0.11.0#292dc2810445423343fb33f5f029027fd60e6ed0"
+version = "1.16.0"
+source = "git+https://github.com/mateusrdp/oxiguitar?rev=b88431f763df71c66fe4f54f8ee4a5d0663dbec1#b88431f763df71c66fe4f54f8ee4a5d0663dbec1"
 dependencies = [
+ "miniz_oxide",
  "postcard",
  "serde",
  "serde_json",
