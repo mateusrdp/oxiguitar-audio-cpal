@@ -14,12 +14,10 @@ homepage = "https://github.com/mateusrdp/oxiguitar-audio-cpal"
 publish = false
 
 [dependencies]
-# The SDK, at the same commit as the four plugins that use this crate: its
-# `Service` and `Host` must be their types. At mateusrdp/oxiguitar#348's
-# commit (plugin files are tar archives, #347) until a release tags it.
-# Move it and the plugins' together. Nothing of OxiGuitar's is on
-# crates.io.
-oxiguitar-plugin = { git = "https://github.com/mateusrdp/oxiguitar", rev = "b88431f763df71c66fe4f54f8ee4a5d0663dbec1" }
+# The SDK, at the same tag as the four plugins that use this crate: its
+# `Service` and `Host` must be their types. Move it and the plugins' tags
+# together.
+oxiguitar-plugin = { git = "https://github.com/mateusrdp/oxiguitar", tag = "v0.23.0" }
 # Each plugin adds the features of its own host (the PipeWire plugin's
 # `pipewire`) on its own cpal dependency; on Linux cpal always builds its
 # ALSA host too (Mateus, 25 Oct 2026: accepted).
