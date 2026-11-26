@@ -1,0 +1,827 @@
+{
+  "version": "1.0.0",
+  "project": {
+    "name": "oxiguitar-audio-cpal",
+    "description": "oxiguitar-audio-cpal plugin for OxiGuitar",
+    "languages": [
+      "json",
+      "rust",
+      "toml"
+    ],
+    "frameworks": [],
+    "analyzedAt": "2026-11-26T22:00:00.000Z",
+    "analyzedCommit": "e4d0beb305595e739c0c2544036ccaa9275033b5"
+  },
+  "nodes": [
+    {
+      "id": "file:.github/workflows/ci.yml",
+      "type": "pipeline",
+      "name": "CI Workflow",
+      "summary": "Continuous integration: build, test, and lint for the audio-cpal plugin",
+      "tags": [
+        "ci",
+        "github",
+        "yaml"
+      ],
+      "complexity": "simple",
+      "filePath": ".github/workflows/ci.yml"
+    },
+    {
+      "id": "file:.github/workflows/docs.yml",
+      "type": "pipeline",
+      "name": "Docs Workflow",
+      "summary": "Documentation build and publish pipeline",
+      "tags": [
+        "ci",
+        "docs",
+        "yaml"
+      ],
+      "complexity": "simple",
+      "filePath": ".github/workflows/docs.yml"
+    },
+    {
+      "id": "file:README.md",
+      "type": "document",
+      "name": "README",
+      "summary": "Plugin documentation and usage guide",
+      "tags": [
+        "docs"
+      ],
+      "complexity": "simple",
+      "filePath": "README.md"
+    },
+    {
+      "id": "file:CHANGELOG.md",
+      "type": "document",
+      "name": "CHANGELOG",
+      "summary": "Version history and release notes",
+      "tags": [
+        "docs",
+        "changelog"
+      ],
+      "complexity": "simple",
+      "filePath": "CHANGELOG.md"
+    },
+    {
+      "id": "file:CONTRIBUTING.md",
+      "type": "document",
+      "name": "CONTRIBUTING",
+      "summary": "Contributor guidelines",
+      "tags": [
+        "docs",
+        "contributing"
+      ],
+      "complexity": "simple",
+      "filePath": "CONTRIBUTING.md"
+    },
+    {
+      "id": "file:Cargo.toml",
+      "type": "config",
+      "name": "Cargo.toml",
+      "summary": "Dependencies: cpal, oxiguitar-host, serde",
+      "tags": [
+        "config",
+        "cargo"
+      ],
+      "complexity": "simple",
+      "filePath": "Cargo.toml"
+    },
+    {
+      "id": "file:clippy.toml",
+      "type": "config",
+      "name": "clippy.toml",
+      "summary": "Clippy lint configuration",
+      "tags": [
+        "config",
+        "clippy"
+      ],
+      "complexity": "simple",
+      "filePath": "clippy.toml"
+    },
+    {
+      "id": "file:deny.toml",
+      "type": "config",
+      "name": "deny.toml",
+      "summary": "Cargo deny: license and vulnerability checks",
+      "tags": [
+        "config",
+        "deny"
+      ],
+      "complexity": "simple",
+      "filePath": "deny.toml"
+    },
+    {
+      "id": "file:rustfmt.toml",
+      "type": "config",
+      "name": "rustfmt.toml",
+      "summary": "Rust formatter configuration",
+      "tags": [
+        "config",
+        "rustfmt"
+      ],
+      "complexity": "simple",
+      "filePath": "rustfmt.toml"
+    },
+    {
+      "id": "file:manifest.json",
+      "type": "config",
+      "name": "manifest.json",
+      "summary": "Plugin manifest for OxiGuitar plugin manager",
+      "tags": [
+        "config",
+        "plugin"
+      ],
+      "complexity": "simple",
+      "filePath": "manifest.json"
+    },
+    {
+      "id": "file:scripts/build-oxp.sh",
+      "type": "script",
+      "name": "build-oxp.sh",
+      "summary": "Plugin packaging script",
+      "tags": [
+        "script",
+        "build"
+      ],
+      "complexity": "simple",
+      "filePath": "scripts/build-oxp.sh"
+    },
+    {
+      "id": "file:scripts/test-all.py",
+      "type": "script",
+      "name": "test-all.py",
+      "summary": "Test runner script",
+      "tags": [
+        "script",
+        "test"
+      ],
+      "complexity": "simple",
+      "filePath": "scripts/test-all.py"
+    },
+    {
+      "id": "file:docs/SUMMARY.md",
+      "type": "document",
+      "name": "SUMMARY.md",
+      "summary": "Book navigation: table of contents for the plugin manual",
+      "tags": [
+        "docs",
+        "toc"
+      ],
+      "complexity": "simple",
+      "filePath": "docs/SUMMARY.md"
+    },
+    {
+      "id": "file:docs/src/SUMMARY.md",
+      "type": "document",
+      "name": "SUMMARY (src)",
+      "summary": "Source-level documentation index",
+      "tags": [
+        "docs"
+      ],
+      "complexity": "simple",
+      "filePath": "docs/src/SUMMARY.md"
+    },
+    {
+      "id": "file:docs/src/introduction.md",
+      "type": "document",
+      "name": "Introduction",
+      "summary": "Plugin introduction: what audio-cpal does, how to install",
+      "tags": [
+        "docs"
+      ],
+      "complexity": "simple",
+      "filePath": "docs/src/introduction.md"
+    },
+    {
+      "id": "file:docs/src/installation.md",
+      "type": "document",
+      "name": "Installation",
+      "summary": "Installation instructions: system dependencies, cargo build",
+      "tags": [
+        "docs"
+      ],
+      "complexity": "simple",
+      "filePath": "docs/src/installation.md"
+    },
+    {
+      "id": "file:docs/src/usage.md",
+      "type": "document",
+      "name": "Usage",
+      "summary": "Usage guide: enabling the plugin, audio device selection",
+      "tags": [
+        "docs"
+      ],
+      "complexity": "simple",
+      "filePath": "docs/src/usage.md"
+    },
+    {
+      "id": "file:docs/src/troubleshooting.md",
+      "type": "document",
+      "name": "Troubleshooting",
+      "summary": "Common issues: device not found, audio glitches",
+      "tags": [
+        "docs"
+      ],
+      "complexity": "simple",
+      "filePath": "docs/src/troubleshooting.md"
+    },
+    {
+      "id": "file:docs/src/architecture.md",
+      "type": "document",
+      "name": "Architecture",
+      "summary": "Architecture overview: CPAL stream lifecycle, plugin interface",
+      "tags": [
+        "docs"
+      ],
+      "complexity": "moderate",
+      "filePath": "docs/src/architecture.md"
+    },
+    {
+      "id": "file:docs/src/features.md",
+      "type": "document",
+      "name": "Features",
+      "summary": "Feature list with test references",
+      "tags": [
+        "docs"
+      ],
+      "complexity": "simple",
+      "filePath": "docs/src/features.md"
+    },
+    {
+      "id": "file:docs/src/contributing.md",
+      "type": "document",
+      "name": "Contributing",
+      "summary": "Development guidelines for the plugin",
+      "tags": [
+        "docs"
+      ],
+      "complexity": "simple",
+      "filePath": "docs/src/contributing.md"
+    },
+    {
+      "id": "file:src/lib.rs",
+      "type": "file",
+      "name": "lib.rs",
+      "summary": "Plugin entry point: implements OxiGuitar plugin trait, exposes CPAL audio output",
+      "tags": [
+        "rust",
+        "plugin-entry"
+      ],
+      "complexity": "moderate",
+      "filePath": "src/lib.rs"
+    },
+    {
+      "id": "function:src/lib.rs:plugin_init",
+      "type": "function",
+      "name": "plugin_init",
+      "summary": "Plugin initialization: creates the audio-cpal output plugin instance",
+      "tags": [
+        "rust",
+        "init"
+      ],
+      "complexity": "simple",
+      "filePath": "src/lib.rs"
+    },
+    {
+      "id": "file:src/output.rs",
+      "type": "file",
+      "name": "output.rs",
+      "summary": "CPAL audio output: stream creation, device enumeration, sample callback",
+      "tags": [
+        "rust",
+        "audio",
+        "cpal"
+      ],
+      "complexity": "complex",
+      "filePath": "src/output.rs"
+    },
+    {
+      "id": "function:src/output.rs:create_stream",
+      "type": "function",
+      "name": "create_stream",
+      "summary": "Creates a CPAL output stream with configured sample rate and channels",
+      "tags": [
+        "rust",
+        "audio"
+      ],
+      "complexity": "moderate",
+      "filePath": "src/output.rs"
+    },
+    {
+      "id": "function:src/output.rs:stream_callback",
+      "type": "function",
+      "name": "stream_callback",
+      "summary": "CPAL stream callback: feeds audio samples from OxiGuitar buffer",
+      "tags": [
+        "rust",
+        "audio",
+        "callback"
+      ],
+      "complexity": "moderate",
+      "filePath": "src/output.rs"
+    },
+    {
+      "id": "file:src/device.rs",
+      "type": "file",
+      "name": "device.rs",
+      "summary": "Audio device management: enumerate CPAL devices, select default output",
+      "tags": [
+        "rust",
+        "audio",
+        "device"
+      ],
+      "complexity": "moderate",
+      "filePath": "src/device.rs"
+    },
+    {
+      "id": "function:src/device.rs:enumerate",
+      "type": "function",
+      "name": "enumerate",
+      "summary": "Lists all available CPAL output devices with names and capabilities",
+      "tags": [
+        "rust",
+        "audio"
+      ],
+      "complexity": "simple",
+      "filePath": "src/device.rs"
+    },
+    {
+      "id": "file:src/config.rs",
+      "type": "file",
+      "name": "config.rs",
+      "summary": "Plugin configuration: device selection, sample rate, buffer size",
+      "tags": [
+        "rust",
+        "config"
+      ],
+      "complexity": "simple",
+      "filePath": "src/config.rs"
+    },
+    {
+      "id": "file:tests/integration.rs",
+      "type": "file",
+      "name": "integration.rs",
+      "summary": "Integration tests: audio stream creation, device enumeration",
+      "tags": [
+        "rust",
+        "test"
+      ],
+      "complexity": "moderate",
+      "filePath": "tests/integration.rs"
+    },
+    {
+      "id": "file:tests/suite.json",
+      "type": "config",
+      "name": "suite.json",
+      "summary": "Test suite definition: which tests to run",
+      "tags": [
+        "test"
+      ],
+      "complexity": "simple",
+      "filePath": "tests/suite.json"
+    },
+    {
+      "id": "file:tests/support/corpus.rs",
+      "type": "file",
+      "name": "corpus.rs",
+      "summary": "Test corpus support: loads guitar tablature files for regression testing",
+      "tags": [
+        "test",
+        "corpus"
+      ],
+      "complexity": "moderate",
+      "filePath": "tests/support/corpus.rs"
+    },
+    {
+      "id": "file:src/errors.rs",
+      "type": "file",
+      "name": "errors.rs",
+      "summary": "Error types: CPAL errors, device errors, stream errors",
+      "tags": [
+        "rust",
+        "error"
+      ],
+      "complexity": "simple",
+      "filePath": "src/errors.rs"
+    },
+    {
+      "id": "file:src/buffer.rs",
+      "type": "file",
+      "name": "buffer.rs",
+      "summary": "Audio buffer management: ring buffer for sample delivery",
+      "tags": [
+        "rust",
+        "audio",
+        "buffer"
+      ],
+      "complexity": "moderate",
+      "filePath": "src/buffer.rs"
+    },
+    {
+      "id": "file:src/mixer.rs",
+      "type": "file",
+      "name": "mixer.rs",
+      "summary": "Audio mixing: combines multiple tracks, applies volume/pan",
+      "tags": [
+        "rust",
+        "audio",
+        "mixer"
+      ],
+      "complexity": "complex",
+      "filePath": "src/mixer.rs"
+    },
+    {
+      "id": "file:src/playback.rs",
+      "type": "file",
+      "name": "playback.rs",
+      "summary": "Playback control: start, stop, pause, seek operations",
+      "tags": [
+        "rust",
+        "playback"
+      ],
+      "complexity": "moderate",
+      "filePath": "src/playback.rs"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:.github/workflows/ci.yml",
+      "target": "file:.github/workflows/docs.yml",
+      "type": "related",
+      "direction": "bidirectional",
+      "weight": 0.5
+    },
+    {
+      "source": "file:scripts/build-oxp.sh",
+      "target": "file:Cargo.toml",
+      "type": "uses",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:scripts/test-all.py",
+      "target": "file:Cargo.toml",
+      "type": "uses",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:manifest.json",
+      "target": "file:Cargo.toml",
+      "type": "references",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:README.md",
+      "target": "file:CONTRIBUTING.md",
+      "type": "references",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:deny.toml",
+      "target": "file:Cargo.toml",
+      "type": "validates",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "file:clippy.toml",
+      "target": "file:Cargo.toml",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "file:docs/SUMMARY.md",
+      "target": "file:docs/src/introduction.md",
+      "type": "links_to",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:docs/SUMMARY.md",
+      "target": "file:docs/src/installation.md",
+      "type": "links_to",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:docs/SUMMARY.md",
+      "target": "file:docs/src/usage.md",
+      "type": "links_to",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:docs/SUMMARY.md",
+      "target": "file:docs/src/troubleshooting.md",
+      "type": "links_to",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:docs/SUMMARY.md",
+      "target": "file:docs/src/architecture.md",
+      "type": "links_to",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:docs/SUMMARY.md",
+      "target": "file:docs/src/features.md",
+      "type": "links_to",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:docs/SUMMARY.md",
+      "target": "file:docs/src/contributing.md",
+      "type": "links_to",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:docs/src/features.md",
+      "target": "file:docs/src/architecture.md",
+      "type": "references",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:docs/src/usage.md",
+      "target": "file:docs/src/installation.md",
+      "type": "references",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:docs/src/troubleshooting.md",
+      "target": "file:docs/src/usage.md",
+      "type": "references",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:docs/src/architecture.md",
+      "target": "file:docs/src/usage.md",
+      "type": "described_in",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:docs/src/contributing.md",
+      "target": "file:docs/src/architecture.md",
+      "type": "references",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:README.md",
+      "target": "file:docs/src/introduction.md",
+      "type": "links_to",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/lib.rs",
+      "target": "file:src/output.rs",
+      "type": "depends-on",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/lib.rs",
+      "target": "file:src/device.rs",
+      "type": "depends-on",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/lib.rs",
+      "target": "file:src/config.rs",
+      "type": "depends-on",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/lib.rs",
+      "target": "file:src/errors.rs",
+      "type": "depends-on",
+      "direction": "forward",
+      "weight": 0.9
+    },
+    {
+      "source": "file:src/output.rs",
+      "target": "file:src/buffer.rs",
+      "type": "depends-on",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/output.rs",
+      "target": "file:src/mixer.rs",
+      "type": "depends-on",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/output.rs",
+      "target": "file:src/playback.rs",
+      "type": "depends-on",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/device.rs",
+      "target": "file:src/config.rs",
+      "type": "depends-on",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/mixer.rs",
+      "target": "file:src/buffer.rs",
+      "type": "depends-on",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/playback.rs",
+      "target": "file:src/output.rs",
+      "type": "depends-on",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/integration.rs",
+      "target": "file:src/lib.rs",
+      "type": "tests",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/integration.rs",
+      "target": "file:src/output.rs",
+      "type": "tests",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/integration.rs",
+      "target": "file:src/device.rs",
+      "type": "tests",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/support/corpus.rs",
+      "target": "file:tests/integration.rs",
+      "type": "used-by",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:README.md",
+      "target": "file:src/lib.rs",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:src/lib.rs",
+      "target": "function:src/lib.rs:plugin_init",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/output.rs",
+      "target": "function:src/output.rs:create_stream",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/output.rs",
+      "target": "function:src/output.rs:stream_callback",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/device.rs",
+      "target": "function:src/device.rs:enumerate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    }
+  ],
+  "layers": [
+    {
+      "name": "CI/CD Pipelines",
+      "nodes": [
+        "file:.github/workflows/ci.yml",
+        "file:.github/workflows/docs.yml"
+      ],
+      "description": "CI/CD Pipelines layer"
+    },
+    {
+      "name": "Documentation",
+      "nodes": [
+        "file:README.md",
+        "file:CHANGELOG.md",
+        "file:CONTRIBUTING.md",
+        "file:docs/SUMMARY.md",
+        "file:docs/src/SUMMARY.md",
+        "file:docs/src/introduction.md",
+        "file:docs/src/installation.md",
+        "file:docs/src/usage.md",
+        "file:docs/src/troubleshooting.md",
+        "file:docs/src/architecture.md",
+        "file:docs/src/features.md",
+        "file:docs/src/contributing.md"
+      ],
+      "description": "Documentation layer"
+    },
+    {
+      "name": "Configuration",
+      "nodes": [
+        "file:Cargo.toml",
+        "file:clippy.toml",
+        "file:deny.toml",
+        "file:rustfmt.toml"
+      ],
+      "description": "Configuration layer"
+    },
+    {
+      "name": "Plugin Source",
+      "nodes": [
+        "file:manifest.json",
+        "file:src/lib.rs",
+        "function:src/lib.rs:plugin_init",
+        "file:src/output.rs",
+        "function:src/output.rs:create_stream",
+        "function:src/output.rs:stream_callback",
+        "file:src/device.rs",
+        "function:src/device.rs:enumerate",
+        "file:src/config.rs",
+        "file:src/errors.rs",
+        "file:src/buffer.rs",
+        "file:src/mixer.rs",
+        "file:src/playback.rs"
+      ],
+      "description": "Plugin Source layer"
+    },
+    {
+      "name": "Scripts",
+      "nodes": [
+        "file:scripts/build-oxp.sh",
+        "file:scripts/test-all.py"
+      ],
+      "description": "Scripts layer"
+    },
+    {
+      "name": "Test Infrastructure",
+      "nodes": [
+        "file:tests/integration.rs",
+        "file:tests/suite.json",
+        "file:tests/support/corpus.rs"
+      ],
+      "description": "Test Infrastructure layer"
+    }
+  ],
+  "tour": [
+    {
+      "title": "Plugin Overview",
+      "nodeId": "file:README.md",
+      "summary": "oxiguitar-audio-cpal plugin overview",
+      "layer": "Documentation"
+    },
+    {
+      "title": "Plugin Entry",
+      "nodeId": "file:src/lib.rs",
+      "summary": "Plugin entry point",
+      "layer": "Plugin Source"
+    },
+    {
+      "title": "output.rs",
+      "nodeId": "file:src/output.rs",
+      "summary": "src/output.rs component",
+      "layer": "Plugin Source"
+    },
+    {
+      "title": "Cargo.toml",
+      "nodeId": "file:Cargo.toml",
+      "summary": "Cargo.toml component",
+      "layer": "Configuration"
+    },
+    {
+      "title": "ci.yml",
+      "nodeId": "file:.github/workflows/ci.yml",
+      "summary": ".github/workflows/ci.yml component",
+      "layer": "CI/CD Pipelines"
+    }
+  ]
+}
